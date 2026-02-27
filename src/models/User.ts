@@ -21,7 +21,7 @@ export interface UserCreationAttributes extends Optional<
 export interface UserCreationAttributes extends Optional<
   UserAttributes,
   "id" | "role" | "isActive"
-> {}
+> {} 
 
 class User
   extends Model<UserAttributes, UserCreationAttributes>

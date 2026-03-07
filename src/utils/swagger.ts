@@ -1,4 +1,5 @@
 import swaggerJsdoc from "swagger-jsdoc";
+import path from "path";
 
 const options: swaggerJsdoc.Options = {
   definition: {
@@ -23,7 +24,12 @@ const options: swaggerJsdoc.Options = {
       },
     ],
   },
-  apis: ["./docs/*.yaml"],
+  // Основываем путь на корне проекта (process.cwd())
+  apis: [
+    path.join(process.cwd(), "src/docs/*.yaml"),
+    path.join(process.cwd(), "src/routes/*.ts"),
+    path.join(process.cwd(), "dist/routes/*.js"),
+  ],
 };
 
 export const specs = swaggerJsdoc(options);

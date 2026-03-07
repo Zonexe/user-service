@@ -16,9 +16,7 @@ router.get(
   roleMiddleware(["admin"]),
   UserController.getAll,
 );
-
 router.get("/:id", authMiddleware, UserController.getOne);
-
 router.patch(
   "/:id/block",
   authMiddleware,
